@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script type="module" src="script.js" defer></script>
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js" defer></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <input id="start_file_input" type="file" accept=".jpg,.png" />
+
+    <div id="main_content" class="main hidden">
+      <div class="filters">
+        <button class="filter_button" data-filter_name="grayscale">
+          Grayscale
+        </button>
+        <button class="filter_button" data-filter_name="threshold">
+          Threshold
+        </button>
+        <button class="filter_button" data-filter_name="boxblur">
+          Box blur
+        </button>
+        <button class="filter_button" data-filter_name="sharpening">
+          Sharpening
+        </button>
+        <button class="filter_button" data-filter_name="unsharpmasking">
+          Unsharp masking
+        </button>
+        <button class="filter_button" data-filter_name="laplacian">
+          Laplacian
+        </button>
+        <button class="filter_button" data-filter_name="sobel">Sobel</button>
+      </div>
+
+      <div class="view">
+        <div class="canvas-container">
+            <img id="original_image" class="hidden view-element" src="" />
+            <canvas id="filtered_image" class="hidden view-element"></canvas>
+            <canvas id="overlay" class="hidden view-element"></canvas>
+        </div>
+      </div>
+
+      <div class="info">
+        <input id="file_input" type="file" accept=".jpg,.png" />
+        <button id="toggle_original_btn">Toggle original</button>
+        <button id="revert_btn">Revert</button>
+        <button id="download_btn">Download</button>
+      </div>
+
+    <div class="tools">
+        <button class="tool_btn" data-tool_name="copy">Copy</button>
+        <button class="tool_btn" data-tool_name="cut">Cut</button>
+        <button class="tool_btn" data-tool_name="brush">Brush</button>
+        <button class="tool_btn" data-tool_name="rectangle">Rectangle</button>
+        <input id="color_picker" type="color" name="color_picker"/>
+        <label for="color_picker">Color</label>
+        <input id="brush_size_picker" type="number" name="brush_size_picker" min="1" step="0.1"/>
+        <label for="brush_size_picker">brush size</label>
+    </div>
+
+      <div class="histogram_container">
+        <div id="histogram"></div>
+        <div class="button_column">
+          <p>multiply channel by</p>
+          <input id="multiply_red_channel_input" value="1" type="number" min="0" step="0.01" name="red"/>
+          <label for="red">red</label></br>
+          <input id="multiply_green_channel_input" value="1" type="number" min="0" step="0.01" name="green"/>
+          <label for="green">green</label></br>
+          <input id="multiply_blue_channel_input" value="1" type="number" min="0" step="0.01" name="blue"/>
+          <label for="blue">blue</label></br>
+          <button class="filter_button" data-filter_name="multiplyingchannels">go</button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

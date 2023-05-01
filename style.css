@@ -1,0 +1,142 @@
+:root {
+  --btn-color: #ffffff;
+  --btn-hover-color: #ffe5e5;
+  --bg-color: #ffffff;
+  --off-color: #fff;
+  --placeholder-image-color: #9a9a9a;
+  --margin: 10px;
+}
+
+html {
+  margin: 10px;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  height: calc(100vh - calc(2 * var(--margin)));
+  background-color: var(--bg-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+button {
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: var(--btn-color);
+}
+
+button:hover {
+  opacity: 100%;
+}
+
+.main {
+  display: grid;
+  grid-template-columns: 1fr 3fr 2fr;
+  grid-template-rows: repeat(10, 1fr);
+  align-items: center;
+  background-color: var(--bg-color);
+  height: 100%;
+  width: 100%;
+}
+
+.filters {
+  grid-row-start: 8;
+  grid-row-end: 10;
+  grid-column-start: 1;
+  grid-column-end: 6;
+  display: flex;
+  justify-content: space-around;
+}
+
+.tools {
+  grid-row-start: 3;
+  grid-row-end: 8;
+  grid-column-start: 1;
+  grid-column-end: 2;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-around;
+}
+
+.view {
+  grid-row-start: 2;
+  grid-row-end: 8;
+  grid-column-start: 1;
+  grid-column-end: 4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.canvas-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+}
+
+#filtered_image,
+#original_image,
+#overlay {
+  grid-row-start: 1;
+  grid-row-end: 2;
+  grid-column-start: 1;
+  grid-column-end: 2;
+  min-width: 250px;
+  min-height: 250px;
+  max-width: 700px;
+  max-height: 700px;
+}
+
+#filtered_image {
+  z-index: 2;
+}
+
+#overlay {
+  z-index: 3;
+}
+
+#original_image {
+  z-index: 4;
+}
+
+.info {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  height: 100%;
+  grid-row-start: 1;
+  grid-row-end: 2;
+  grid-column-start: 1;
+  grid-column-end: 4;
+  border-bottom: 3px solid rgb(32, 32, 32);
+  padding-top: 40px;
+}
+
+.histogram_container {
+  grid-column-start: 1;
+  grid-column-end: 4;
+  grid-row-end: 11;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.button-column {
+  display: flex;
+  flex-direction: column;
+}
+
+#histogram {
+  width: 800px;
+  height: 200px;
+}
+
+.hidden {
+  display: none;
+}
